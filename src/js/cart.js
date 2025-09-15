@@ -1,5 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
-import ProductData from "./productData.mjs";
+import ProductData from "./ProductData.mjs";
 import { updateCartBadge } from "./cartBadge.js";
 
 function renderCartContents() {
