@@ -10,9 +10,21 @@ if (productId) {
   const product = new ProductDetails(productId, dataSource);
   product.init();
 } else {
-  document.getElementById("productDetails").innerHTML =
-    "<p>⚠️ No product selected</p>";
-}
-
-// actualiza el badge al cargar la página
+  const detailsEl = document.getElementById("productDetails");
+  if (detailsEl) {
+    detailsEl.innerHTML ="<p>⚠️ No product selected</p>";
+  };
+};
 updateCartBadge();
+// const params = new URLSearchParams(window.location.search);
+// const productId = params.get("product");
+
+// if (productId) {
+//   const dataSource = new ProductData("../json/tents.json");
+//   const product = new ProductDetails(productId, dataSource);
+//   product.init();
+// } else {
+//   document.getElementById("productDetails").innerHTML =
+//     "<p>⚠️ No product selected</p>";
+// }
+// updateCartBadge();
