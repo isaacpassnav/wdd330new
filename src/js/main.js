@@ -25,7 +25,7 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get("product");
 
 if (productId) {
-  const dataSource = new ProductData("/json/tents.json");
+  const dataSource = new ProductData("../json/tents.json");
   const product = new ProductDetails(productId, dataSource);
   product.init();
 } else {

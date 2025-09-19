@@ -12,8 +12,6 @@ export default class ProductDetails {
     console.log("Producto encontrado:", this.product);
     // render product details
     this.renderProductDetails();
-
-    // attach Add to Cart listener
     const addBtn = document.getElementById("addToCart");
     if (addBtn) {
       addBtn.addEventListener("click", this.addProductToCart.bind(this));
@@ -24,7 +22,7 @@ export default class ProductDetails {
 
     const productForCart = {
       ...this.product,
-      FinalPrice: this.product.FinalPrice, // ya está en JSON
+      FinalPrice: this.product.FinalPrice, 
     };
     cart.push(productForCart);
     setLocalStorage("so-cart", cart);

@@ -6,6 +6,7 @@ export default class ProductData {
 
   async getData() {
     try {
+      console.log("📂 Fetching JSON:", this.jsonFile);
       const response = await fetch(this.jsonFile);
       if (!response.ok) throw new Error("Error loading JSON");
       const data = await response.json();
@@ -15,7 +16,6 @@ export default class ProductData {
       return [];
     }
   }
-
   async findProductById(productId) {
     const data = await this.getData();
     return data.find((item) => item.Id === productId);
